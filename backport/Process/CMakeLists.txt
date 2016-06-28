@@ -1,0 +1,27 @@
+cmake_minimum_required (VERSION 2.6)
+project(Process)
+
+file(GLOB FILESCXX "./*.c*")
+file(GLOB FILESH "./*.h*")
+
+if(WIN32)
+	include_directories(./win)
+	file(GLOB FILESHTMP "./win/*.h*")
+	list(APPEND FILESH ${FILESHTMP})
+	file(GLOB FILESHTMP "./win/*.inc")
+	list(APPEND FILESH ${FILESHTMP})
+	file(GLOB FILESCXXTMP "./win/*.c*")
+	list(APPEND FILESCXX ${FILESCXXTMP})
+else()
+	include_directories(./posix)
+	file(GLOB FILESHTMP "./posix/*.h*")
+	list(APPEND FILESH ${FILESHTMP})
+	file(GLOB FILESHTMP "./posix/*.inc")
+	list(APPEND FILESH ${FILESHTMP})
+	file(GLOB FILESCXXTMP "./posix/*.c*")
+	list(APPEND FILESCXX ${FILESCXXTMP})
+endif()
+
+include_directories(.)
+
+add_library(Process ${FILESCXX} ${FILESH})

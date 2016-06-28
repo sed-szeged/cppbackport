@@ -1,0 +1,13 @@
+Index: lib/ASTMatchers/ASTMatchFinder.cpp
+===================================================================
+--- lib/ASTMatchers/ASTMatchFinder.cpp	(revision 234882)
++++ lib/ASTMatchers/ASTMatchFinder.cpp	(working copy)
+@@ -643,7 +643,7 @@
+     Result.Nodes = *Builder;
+ 
+     const auto &Parents = ActiveASTContext->getParents(Node);
+-    assert(!Parents.empty() && "Found node that is not in the parent map.");
++    /*assert(!Parents.empty() && "Found node that is not in the parent map.");*/
+     if (Parents.size() == 1) {
+       // Only one parent - do recursive memoization.
+       const ast_type_traits::DynTypedNode Parent = Parents[0];

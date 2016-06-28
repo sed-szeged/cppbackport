@@ -1,0 +1,16 @@
+Index: SemaTemplateInstantiateDecl.cpp
+===================================================================
+--- SemaTemplateInstantiateDecl.cpp	(revision 230753)
++++ SemaTemplateInstantiateDecl.cpp	(working copy)
+@@ -3331,6 +3331,11 @@
+     LateParsedTemplate *LPT = LateParsedTemplateMap.lookup(PatternDecl);
+     assert(LPT && "missing LateParsedTemplate");
+     LateTemplateParser(OpaqueParser, *LPT);
++
++    // We're gonna force parse all late parsed templates not parsed otherwise
++    LateParsedTemplateMap.erase(PatternDecl);
++    // So we need to remove the ones that get late parsed normally, to avoid redefinition conflicts
++
+     Pattern = PatternDecl->getBody(PatternDecl);
+   }
+ 

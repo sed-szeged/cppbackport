@@ -1,0 +1,7 @@
+[
+{
+  "directory": "{workDir}", 
+  "command": "cl.exe -c {workDir}/C.cpp -o2",
+  "file": "{workDir}/C.cpp"
+},
+]

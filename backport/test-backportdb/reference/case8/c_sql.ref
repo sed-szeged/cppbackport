@@ -1,0 +1,3289 @@
+BEGIN TRANSACTION;
+CREATE TABLE `COMPILATION_UNIT` ( `id`   INTEGER NOT NULL PRIMARY KEY,`timestamp`    DATETIME NOT NULL, `cmd_args` TEXT NOT NULL, FOREIGN KEY(`id`) REFERENCES FILES(id) );
+INSERT INTO "COMPILATION_UNIT" VALUES(7,1427387312,' cl.exe -c work/A.cpp -o2');
+INSERT INTO "COMPILATION_UNIT" VALUES(10,1427215320,' cl.exe -c work/B.cpp -o2');
+INSERT INTO "COMPILATION_UNIT" VALUES(17,1427461578,' cl.exe -c work/C.cpp -o2');
+CREATE TABLE `FILES` ( `id`   INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,`number_of_lines` INTEGER,`path` TEXT NOT NULL);
+INSERT INTO "FILES" VALUES(1,42,'work/temp/A.cpp');
+INSERT INTO "FILES" VALUES(2,19,'work/temp/A.h');
+INSERT INTO "FILES" VALUES(3,37,'work/temp/All.h');
+INSERT INTO "FILES" VALUES(4,NULL,'work/temp/B.cpp');
+INSERT INTO "FILES" VALUES(5,NULL,'work/temp/B.h');
+INSERT INTO "FILES" VALUES(6,10,'work/temp/IncAll.h');
+INSERT INTO "FILES" VALUES(7,NULL,'work/A.cpp');
+INSERT INTO "FILES" VALUES(8,NULL,'work/A.h');
+INSERT INTO "FILES" VALUES(9,NULL,'work/All.h');
+INSERT INTO "FILES" VALUES(10,NULL,'work/B.cpp');
+INSERT INTO "FILES" VALUES(11,NULL,'work/B.h');
+INSERT INTO "FILES" VALUES(12,NULL,'work/IncAll.h');
+INSERT INTO "FILES" VALUES(13,NULL,'work/OnlyA.h');
+INSERT INTO "FILES" VALUES(14,NULL,'work/OnlyB.h');
+INSERT INTO "FILES" VALUES(15,42,'work/temp/C.cpp');
+INSERT INTO "FILES" VALUES(16,21,'work/temp/C.h');
+INSERT INTO "FILES" VALUES(17,NULL,'work/C.cpp');
+INSERT INTO "FILES" VALUES(18,NULL,'work/C.h');
+INSERT INTO "FILES" VALUES(19,NULL,'work/OnlyC.h');
+CREATE TABLE `LINES` (`id`   INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,`file_id`  INTEGER NOT NULL,`line`  INTEGER NOT NULL,`original_line`  INTEGER NOT NULL,FOREIGN KEY(`file_id`) REFERENCES FILES(id) );
+INSERT INTO "LINES" VALUES(5092,4,18,17);
+INSERT INTO "LINES" VALUES(5093,4,17,16);
+INSERT INTO "LINES" VALUES(5094,4,16,15);
+INSERT INTO "LINES" VALUES(5095,4,15,14);
+INSERT INTO "LINES" VALUES(5096,4,14,13);
+INSERT INTO "LINES" VALUES(5097,4,13,12);
+INSERT INTO "LINES" VALUES(5098,4,12,11);
+INSERT INTO "LINES" VALUES(5099,4,11,10);
+INSERT INTO "LINES" VALUES(5100,4,10,9);
+INSERT INTO "LINES" VALUES(5101,4,9,8);
+INSERT INTO "LINES" VALUES(5102,4,8,7);
+INSERT INTO "LINES" VALUES(5103,4,7,6);
+INSERT INTO "LINES" VALUES(5104,4,6,5);
+INSERT INTO "LINES" VALUES(5105,4,5,4);
+INSERT INTO "LINES" VALUES(5106,4,4,3);
+INSERT INTO "LINES" VALUES(5107,4,3,2);
+INSERT INTO "LINES" VALUES(5108,4,2,1);
+INSERT INTO "LINES" VALUES(5109,5,26,25);
+INSERT INTO "LINES" VALUES(5110,5,25,24);
+INSERT INTO "LINES" VALUES(5111,5,24,23);
+INSERT INTO "LINES" VALUES(5112,5,23,22);
+INSERT INTO "LINES" VALUES(5113,5,22,21);
+INSERT INTO "LINES" VALUES(5114,5,21,20);
+INSERT INTO "LINES" VALUES(5115,5,20,19);
+INSERT INTO "LINES" VALUES(5116,5,19,18);
+INSERT INTO "LINES" VALUES(5117,5,18,17);
+INSERT INTO "LINES" VALUES(5118,5,17,16);
+INSERT INTO "LINES" VALUES(5119,5,16,15);
+INSERT INTO "LINES" VALUES(5120,5,15,14);
+INSERT INTO "LINES" VALUES(5121,5,14,13);
+INSERT INTO "LINES" VALUES(5122,5,13,12);
+INSERT INTO "LINES" VALUES(5123,5,12,11);
+INSERT INTO "LINES" VALUES(5124,5,11,10);
+INSERT INTO "LINES" VALUES(5125,5,10,9);
+INSERT INTO "LINES" VALUES(5126,5,9,8);
+INSERT INTO "LINES" VALUES(5127,5,8,7);
+INSERT INTO "LINES" VALUES(5128,5,7,6);
+INSERT INTO "LINES" VALUES(5129,5,6,5);
+INSERT INTO "LINES" VALUES(5130,5,5,4);
+INSERT INTO "LINES" VALUES(5235,1,87,33);
+INSERT INTO "LINES" VALUES(5236,1,86,32);
+INSERT INTO "LINES" VALUES(5237,1,85,31);
+INSERT INTO "LINES" VALUES(5238,1,84,30);
+INSERT INTO "LINES" VALUES(5239,1,83,29);
+INSERT INTO "LINES" VALUES(5240,1,82,28);
+INSERT INTO "LINES" VALUES(5241,1,81,27);
+INSERT INTO "LINES" VALUES(5242,1,80,26);
+INSERT INTO "LINES" VALUES(5243,1,79,25);
+INSERT INTO "LINES" VALUES(5244,1,78,26);
+INSERT INTO "LINES" VALUES(5245,1,77,26);
+INSERT INTO "LINES" VALUES(5246,1,76,26);
+INSERT INTO "LINES" VALUES(5247,1,75,24);
+INSERT INTO "LINES" VALUES(5248,1,74,23);
+INSERT INTO "LINES" VALUES(5249,1,73,22);
+INSERT INTO "LINES" VALUES(5250,1,72,23);
+INSERT INTO "LINES" VALUES(5251,1,71,23);
+INSERT INTO "LINES" VALUES(5252,1,70,23);
+INSERT INTO "LINES" VALUES(5253,1,69,23);
+INSERT INTO "LINES" VALUES(5254,1,68,23);
+INSERT INTO "LINES" VALUES(5255,1,67,21);
+INSERT INTO "LINES" VALUES(5256,1,66,20);
+INSERT INTO "LINES" VALUES(5257,1,65,19);
+INSERT INTO "LINES" VALUES(5258,1,64,18);
+INSERT INTO "LINES" VALUES(5259,1,63,17);
+INSERT INTO "LINES" VALUES(5260,1,62,16);
+INSERT INTO "LINES" VALUES(5261,1,61,15);
+INSERT INTO "LINES" VALUES(5262,1,60,14);
+INSERT INTO "LINES" VALUES(5263,1,59,13);
+INSERT INTO "LINES" VALUES(5264,1,58,12);
+INSERT INTO "LINES" VALUES(5265,1,57,11);
+INSERT INTO "LINES" VALUES(5266,1,56,10);
+INSERT INTO "LINES" VALUES(5267,1,55,9);
+INSERT INTO "LINES" VALUES(5268,1,54,8);
+INSERT INTO "LINES" VALUES(5269,1,53,7);
+INSERT INTO "LINES" VALUES(5270,1,52,6);
+INSERT INTO "LINES" VALUES(5271,1,51,5);
+INSERT INTO "LINES" VALUES(5272,1,50,4);
+INSERT INTO "LINES" VALUES(5273,1,49,3);
+INSERT INTO "LINES" VALUES(5274,1,48,2);
+INSERT INTO "LINES" VALUES(5275,1,47,1);
+INSERT INTO "LINES" VALUES(5276,1,46,1);
+INSERT INTO "LINES" VALUES(5277,1,1,1);
+INSERT INTO "LINES" VALUES(5278,1,2,1);
+INSERT INTO "LINES" VALUES(5279,1,3,1);
+INSERT INTO "LINES" VALUES(5280,1,4,1);
+INSERT INTO "LINES" VALUES(5281,1,5,1);
+INSERT INTO "LINES" VALUES(5282,1,6,1);
+INSERT INTO "LINES" VALUES(5283,1,7,1);
+INSERT INTO "LINES" VALUES(5284,1,8,1);
+INSERT INTO "LINES" VALUES(5285,1,9,1);
+INSERT INTO "LINES" VALUES(5286,1,10,1);
+INSERT INTO "LINES" VALUES(5287,1,11,1);
+INSERT INTO "LINES" VALUES(5288,1,12,1);
+INSERT INTO "LINES" VALUES(5289,1,13,1);
+INSERT INTO "LINES" VALUES(5290,1,14,1);
+INSERT INTO "LINES" VALUES(5291,1,15,1);
+INSERT INTO "LINES" VALUES(5292,1,16,1);
+INSERT INTO "LINES" VALUES(5293,1,17,1);
+INSERT INTO "LINES" VALUES(5294,1,18,1);
+INSERT INTO "LINES" VALUES(5295,1,19,1);
+INSERT INTO "LINES" VALUES(5296,1,20,1);
+INSERT INTO "LINES" VALUES(5297,1,21,1);
+INSERT INTO "LINES" VALUES(5298,1,22,1);
+INSERT INTO "LINES" VALUES(5299,1,23,1);
+INSERT INTO "LINES" VALUES(5300,1,24,1);
+INSERT INTO "LINES" VALUES(5301,1,25,1);
+INSERT INTO "LINES" VALUES(5302,1,26,1);
+INSERT INTO "LINES" VALUES(5303,1,27,1);
+INSERT INTO "LINES" VALUES(5304,1,28,1);
+INSERT INTO "LINES" VALUES(5305,1,29,1);
+INSERT INTO "LINES" VALUES(5306,1,30,1);
+INSERT INTO "LINES" VALUES(5307,1,31,1);
+INSERT INTO "LINES" VALUES(5308,1,32,1);
+INSERT INTO "LINES" VALUES(5309,1,33,1);
+INSERT INTO "LINES" VALUES(5310,1,34,1);
+INSERT INTO "LINES" VALUES(5311,1,35,1);
+INSERT INTO "LINES" VALUES(5312,1,36,1);
+INSERT INTO "LINES" VALUES(5313,1,37,1);
+INSERT INTO "LINES" VALUES(5314,1,38,1);
+INSERT INTO "LINES" VALUES(5315,1,39,1);
+INSERT INTO "LINES" VALUES(5316,1,40,1);
+INSERT INTO "LINES" VALUES(5317,1,41,1);
+INSERT INTO "LINES" VALUES(5318,1,42,1);
+INSERT INTO "LINES" VALUES(5319,1,43,1);
+INSERT INTO "LINES" VALUES(5320,1,44,1);
+INSERT INTO "LINES" VALUES(5321,1,45,1);
+INSERT INTO "LINES" VALUES(5410,2,64,18);
+INSERT INTO "LINES" VALUES(5411,2,63,17);
+INSERT INTO "LINES" VALUES(5412,2,62,16);
+INSERT INTO "LINES" VALUES(5413,2,61,15);
+INSERT INTO "LINES" VALUES(5414,2,60,14);
+INSERT INTO "LINES" VALUES(5415,2,59,13);
+INSERT INTO "LINES" VALUES(5416,2,58,12);
+INSERT INTO "LINES" VALUES(5417,2,57,11);
+INSERT INTO "LINES" VALUES(5418,2,56,10);
+INSERT INTO "LINES" VALUES(5419,2,55,9);
+INSERT INTO "LINES" VALUES(5420,2,54,8);
+INSERT INTO "LINES" VALUES(5421,2,53,7);
+INSERT INTO "LINES" VALUES(5422,2,52,6);
+INSERT INTO "LINES" VALUES(5423,2,51,6);
+INSERT INTO "LINES" VALUES(5424,2,50,5);
+INSERT INTO "LINES" VALUES(5425,2,49,4);
+INSERT INTO "LINES" VALUES(5426,2,48,3);
+INSERT INTO "LINES" VALUES(5427,2,47,2);
+INSERT INTO "LINES" VALUES(5428,2,46,1);
+INSERT INTO "LINES" VALUES(5429,2,1,1);
+INSERT INTO "LINES" VALUES(5430,2,2,1);
+INSERT INTO "LINES" VALUES(5431,2,3,1);
+INSERT INTO "LINES" VALUES(5432,2,4,1);
+INSERT INTO "LINES" VALUES(5433,2,5,1);
+INSERT INTO "LINES" VALUES(5434,2,6,1);
+INSERT INTO "LINES" VALUES(5435,2,7,1);
+INSERT INTO "LINES" VALUES(5436,2,8,1);
+INSERT INTO "LINES" VALUES(5437,2,9,1);
+INSERT INTO "LINES" VALUES(5438,2,10,1);
+INSERT INTO "LINES" VALUES(5439,2,11,1);
+INSERT INTO "LINES" VALUES(5440,2,12,1);
+INSERT INTO "LINES" VALUES(5441,2,13,1);
+INSERT INTO "LINES" VALUES(5442,2,14,1);
+INSERT INTO "LINES" VALUES(5443,2,15,1);
+INSERT INTO "LINES" VALUES(5444,2,16,1);
+INSERT INTO "LINES" VALUES(5445,2,17,1);
+INSERT INTO "LINES" VALUES(5446,2,18,1);
+INSERT INTO "LINES" VALUES(5447,2,19,1);
+INSERT INTO "LINES" VALUES(5448,2,20,1);
+INSERT INTO "LINES" VALUES(5449,2,21,1);
+INSERT INTO "LINES" VALUES(5450,2,22,1);
+INSERT INTO "LINES" VALUES(5451,2,23,1);
+INSERT INTO "LINES" VALUES(5452,2,24,1);
+INSERT INTO "LINES" VALUES(5453,2,25,1);
+INSERT INTO "LINES" VALUES(5454,2,26,1);
+INSERT INTO "LINES" VALUES(5455,2,27,1);
+INSERT INTO "LINES" VALUES(5456,2,28,1);
+INSERT INTO "LINES" VALUES(5457,2,29,1);
+INSERT INTO "LINES" VALUES(5458,2,30,1);
+INSERT INTO "LINES" VALUES(5459,2,31,1);
+INSERT INTO "LINES" VALUES(5460,2,32,1);
+INSERT INTO "LINES" VALUES(5461,2,33,1);
+INSERT INTO "LINES" VALUES(5462,2,34,1);
+INSERT INTO "LINES" VALUES(5463,2,35,1);
+INSERT INTO "LINES" VALUES(5464,2,36,1);
+INSERT INTO "LINES" VALUES(5465,2,37,1);
+INSERT INTO "LINES" VALUES(5466,2,38,1);
+INSERT INTO "LINES" VALUES(5467,2,39,1);
+INSERT INTO "LINES" VALUES(5468,2,40,1);
+INSERT INTO "LINES" VALUES(5469,2,41,1);
+INSERT INTO "LINES" VALUES(5470,2,42,1);
+INSERT INTO "LINES" VALUES(5471,2,43,1);
+INSERT INTO "LINES" VALUES(5472,2,44,1);
+INSERT INTO "LINES" VALUES(5473,2,45,1);
+INSERT INTO "LINES" VALUES(5540,16,21,20);
+INSERT INTO "LINES" VALUES(5541,16,20,19);
+INSERT INTO "LINES" VALUES(5542,16,19,18);
+INSERT INTO "LINES" VALUES(5543,16,18,17);
+INSERT INTO "LINES" VALUES(5544,16,17,16);
+INSERT INTO "LINES" VALUES(5545,16,16,15);
+INSERT INTO "LINES" VALUES(5546,16,15,14);
+INSERT INTO "LINES" VALUES(5547,16,14,13);
+INSERT INTO "LINES" VALUES(5548,16,13,12);
+INSERT INTO "LINES" VALUES(5549,16,12,11);
+INSERT INTO "LINES" VALUES(5550,16,11,10);
+INSERT INTO "LINES" VALUES(5551,16,10,9);
+INSERT INTO "LINES" VALUES(5552,16,9,8);
+INSERT INTO "LINES" VALUES(5553,16,8,7);
+INSERT INTO "LINES" VALUES(5554,16,7,6);
+INSERT INTO "LINES" VALUES(5555,16,6,5);
+INSERT INTO "LINES" VALUES(5556,16,5,4);
+INSERT INTO "LINES" VALUES(5646,3,82,36);
+INSERT INTO "LINES" VALUES(5647,3,81,35);
+INSERT INTO "LINES" VALUES(5648,3,80,34);
+INSERT INTO "LINES" VALUES(5649,3,79,33);
+INSERT INTO "LINES" VALUES(5650,3,78,32);
+INSERT INTO "LINES" VALUES(5651,3,77,31);
+INSERT INTO "LINES" VALUES(5652,3,76,30);
+INSERT INTO "LINES" VALUES(5653,3,75,29);
+INSERT INTO "LINES" VALUES(5654,3,74,28);
+INSERT INTO "LINES" VALUES(5655,3,73,27);
+INSERT INTO "LINES" VALUES(5656,3,72,26);
+INSERT INTO "LINES" VALUES(5657,3,71,25);
+INSERT INTO "LINES" VALUES(5658,3,70,24);
+INSERT INTO "LINES" VALUES(5659,3,69,23);
+INSERT INTO "LINES" VALUES(5660,3,68,22);
+INSERT INTO "LINES" VALUES(5661,3,67,21);
+INSERT INTO "LINES" VALUES(5662,3,66,20);
+INSERT INTO "LINES" VALUES(5663,3,65,19);
+INSERT INTO "LINES" VALUES(5664,3,64,18);
+INSERT INTO "LINES" VALUES(5665,3,63,17);
+INSERT INTO "LINES" VALUES(5666,3,62,16);
+INSERT INTO "LINES" VALUES(5667,3,61,15);
+INSERT INTO "LINES" VALUES(5668,3,60,14);
+INSERT INTO "LINES" VALUES(5669,3,59,13);
+INSERT INTO "LINES" VALUES(5670,3,58,12);
+INSERT INTO "LINES" VALUES(5671,3,57,11);
+INSERT INTO "LINES" VALUES(5672,3,56,10);
+INSERT INTO "LINES" VALUES(5673,3,55,9);
+INSERT INTO "LINES" VALUES(5674,3,54,8);
+INSERT INTO "LINES" VALUES(5675,3,53,7);
+INSERT INTO "LINES" VALUES(5676,3,52,6);
+INSERT INTO "LINES" VALUES(5677,3,51,5);
+INSERT INTO "LINES" VALUES(5678,3,50,4);
+INSERT INTO "LINES" VALUES(5679,3,49,4);
+INSERT INTO "LINES" VALUES(5680,3,48,3);
+INSERT INTO "LINES" VALUES(5681,3,47,2);
+INSERT INTO "LINES" VALUES(5682,3,46,1);
+INSERT INTO "LINES" VALUES(5683,3,1,1);
+INSERT INTO "LINES" VALUES(5684,3,2,1);
+INSERT INTO "LINES" VALUES(5685,3,3,1);
+INSERT INTO "LINES" VALUES(5686,3,4,1);
+INSERT INTO "LINES" VALUES(5687,3,5,1);
+INSERT INTO "LINES" VALUES(5688,3,6,1);
+INSERT INTO "LINES" VALUES(5689,3,7,1);
+INSERT INTO "LINES" VALUES(5690,3,8,1);
+INSERT INTO "LINES" VALUES(5691,3,9,1);
+INSERT INTO "LINES" VALUES(5692,3,10,1);
+INSERT INTO "LINES" VALUES(5693,3,11,1);
+INSERT INTO "LINES" VALUES(5694,3,12,1);
+INSERT INTO "LINES" VALUES(5695,3,13,1);
+INSERT INTO "LINES" VALUES(5696,3,14,1);
+INSERT INTO "LINES" VALUES(5697,3,15,1);
+INSERT INTO "LINES" VALUES(5698,3,16,1);
+INSERT INTO "LINES" VALUES(5699,3,17,1);
+INSERT INTO "LINES" VALUES(5700,3,18,1);
+INSERT INTO "LINES" VALUES(5701,3,19,1);
+INSERT INTO "LINES" VALUES(5702,3,20,1);
+INSERT INTO "LINES" VALUES(5703,3,21,1);
+INSERT INTO "LINES" VALUES(5704,3,22,1);
+INSERT INTO "LINES" VALUES(5705,3,23,1);
+INSERT INTO "LINES" VALUES(5706,3,24,1);
+INSERT INTO "LINES" VALUES(5707,3,25,1);
+INSERT INTO "LINES" VALUES(5708,3,26,1);
+INSERT INTO "LINES" VALUES(5709,3,27,1);
+INSERT INTO "LINES" VALUES(5710,3,28,1);
+INSERT INTO "LINES" VALUES(5711,3,29,1);
+INSERT INTO "LINES" VALUES(5712,3,30,1);
+INSERT INTO "LINES" VALUES(5713,3,31,1);
+INSERT INTO "LINES" VALUES(5714,3,32,1);
+INSERT INTO "LINES" VALUES(5715,3,33,1);
+INSERT INTO "LINES" VALUES(5716,3,34,1);
+INSERT INTO "LINES" VALUES(5717,3,35,1);
+INSERT INTO "LINES" VALUES(5718,3,36,1);
+INSERT INTO "LINES" VALUES(5719,3,37,1);
+INSERT INTO "LINES" VALUES(5720,3,38,1);
+INSERT INTO "LINES" VALUES(5721,3,39,1);
+INSERT INTO "LINES" VALUES(5722,3,40,1);
+INSERT INTO "LINES" VALUES(5723,3,41,1);
+INSERT INTO "LINES" VALUES(5724,3,42,1);
+INSERT INTO "LINES" VALUES(5725,3,43,1);
+INSERT INTO "LINES" VALUES(5726,3,44,1);
+INSERT INTO "LINES" VALUES(5727,3,45,1);
+INSERT INTO "LINES" VALUES(5728,15,87,33);
+INSERT INTO "LINES" VALUES(5729,15,86,32);
+INSERT INTO "LINES" VALUES(5730,15,85,31);
+INSERT INTO "LINES" VALUES(5731,15,84,30);
+INSERT INTO "LINES" VALUES(5732,15,83,31);
+INSERT INTO "LINES" VALUES(5733,15,82,31);
+INSERT INTO "LINES" VALUES(5734,15,81,31);
+INSERT INTO "LINES" VALUES(5735,15,80,29);
+INSERT INTO "LINES" VALUES(5736,15,79,28);
+INSERT INTO "LINES" VALUES(5737,15,78,27);
+INSERT INTO "LINES" VALUES(5738,15,77,28);
+INSERT INTO "LINES" VALUES(5739,15,76,28);
+INSERT INTO "LINES" VALUES(5740,15,75,28);
+INSERT INTO "LINES" VALUES(5741,15,74,28);
+INSERT INTO "LINES" VALUES(5742,15,73,28);
+INSERT INTO "LINES" VALUES(5743,15,72,26);
+INSERT INTO "LINES" VALUES(5744,15,71,25);
+INSERT INTO "LINES" VALUES(5745,15,70,24);
+INSERT INTO "LINES" VALUES(5746,15,69,23);
+INSERT INTO "LINES" VALUES(5747,15,68,22);
+INSERT INTO "LINES" VALUES(5748,15,67,21);
+INSERT INTO "LINES" VALUES(5749,15,66,20);
+INSERT INTO "LINES" VALUES(5750,15,65,19);
+INSERT INTO "LINES" VALUES(5751,15,64,18);
+INSERT INTO "LINES" VALUES(5752,15,63,17);
+INSERT INTO "LINES" VALUES(5753,15,62,16);
+INSERT INTO "LINES" VALUES(5754,15,61,15);
+INSERT INTO "LINES" VALUES(5755,15,60,14);
+INSERT INTO "LINES" VALUES(5756,15,59,13);
+INSERT INTO "LINES" VALUES(5757,15,58,12);
+INSERT INTO "LINES" VALUES(5758,15,57,11);
+INSERT INTO "LINES" VALUES(5759,15,56,10);
+INSERT INTO "LINES" VALUES(5760,15,55,9);
+INSERT INTO "LINES" VALUES(5761,15,54,8);
+INSERT INTO "LINES" VALUES(5762,15,53,7);
+INSERT INTO "LINES" VALUES(5763,15,52,6);
+INSERT INTO "LINES" VALUES(5764,15,51,5);
+INSERT INTO "LINES" VALUES(5765,15,50,4);
+INSERT INTO "LINES" VALUES(5766,15,49,3);
+INSERT INTO "LINES" VALUES(5767,15,48,2);
+INSERT INTO "LINES" VALUES(5768,15,47,1);
+INSERT INTO "LINES" VALUES(5769,15,46,1);
+INSERT INTO "LINES" VALUES(5770,15,1,1);
+INSERT INTO "LINES" VALUES(5771,15,2,1);
+INSERT INTO "LINES" VALUES(5772,15,3,1);
+INSERT INTO "LINES" VALUES(5773,15,4,1);
+INSERT INTO "LINES" VALUES(5774,15,5,1);
+INSERT INTO "LINES" VALUES(5775,15,6,1);
+INSERT INTO "LINES" VALUES(5776,15,7,1);
+INSERT INTO "LINES" VALUES(5777,15,8,1);
+INSERT INTO "LINES" VALUES(5778,15,9,1);
+INSERT INTO "LINES" VALUES(5779,15,10,1);
+INSERT INTO "LINES" VALUES(5780,15,11,1);
+INSERT INTO "LINES" VALUES(5781,15,12,1);
+INSERT INTO "LINES" VALUES(5782,15,13,1);
+INSERT INTO "LINES" VALUES(5783,15,14,1);
+INSERT INTO "LINES" VALUES(5784,15,15,1);
+INSERT INTO "LINES" VALUES(5785,15,16,1);
+INSERT INTO "LINES" VALUES(5786,15,17,1);
+INSERT INTO "LINES" VALUES(5787,15,18,1);
+INSERT INTO "LINES" VALUES(5788,15,19,1);
+INSERT INTO "LINES" VALUES(5789,15,20,1);
+INSERT INTO "LINES" VALUES(5790,15,21,1);
+INSERT INTO "LINES" VALUES(5791,15,22,1);
+INSERT INTO "LINES" VALUES(5792,15,23,1);
+INSERT INTO "LINES" VALUES(5793,15,24,1);
+INSERT INTO "LINES" VALUES(5794,15,25,1);
+INSERT INTO "LINES" VALUES(5795,15,26,1);
+INSERT INTO "LINES" VALUES(5796,15,27,1);
+INSERT INTO "LINES" VALUES(5797,15,28,1);
+INSERT INTO "LINES" VALUES(5798,15,29,1);
+INSERT INTO "LINES" VALUES(5799,15,30,1);
+INSERT INTO "LINES" VALUES(5800,15,31,1);
+INSERT INTO "LINES" VALUES(5801,15,32,1);
+INSERT INTO "LINES" VALUES(5802,15,33,1);
+INSERT INTO "LINES" VALUES(5803,15,34,1);
+INSERT INTO "LINES" VALUES(5804,15,35,1);
+INSERT INTO "LINES" VALUES(5805,15,36,1);
+INSERT INTO "LINES" VALUES(5806,15,37,1);
+INSERT INTO "LINES" VALUES(5807,15,38,1);
+INSERT INTO "LINES" VALUES(5808,15,39,1);
+INSERT INTO "LINES" VALUES(5809,15,40,1);
+INSERT INTO "LINES" VALUES(5810,15,41,1);
+INSERT INTO "LINES" VALUES(5811,15,42,1);
+INSERT INTO "LINES" VALUES(5812,15,43,1);
+INSERT INTO "LINES" VALUES(5813,15,44,1);
+INSERT INTO "LINES" VALUES(5814,15,45,1);
+INSERT INTO "LINES" VALUES(5815,6,55,1);
+INSERT INTO "LINES" VALUES(5816,6,54,1);
+INSERT INTO "LINES" VALUES(5817,6,53,1);
+INSERT INTO "LINES" VALUES(5818,6,52,1);
+INSERT INTO "LINES" VALUES(5819,6,51,1);
+INSERT INTO "LINES" VALUES(5820,6,50,1);
+INSERT INTO "LINES" VALUES(5821,6,49,1);
+INSERT INTO "LINES" VALUES(5822,6,48,1);
+INSERT INTO "LINES" VALUES(5823,6,47,1);
+INSERT INTO "LINES" VALUES(5824,6,46,1);
+INSERT INTO "LINES" VALUES(5825,6,1,1);
+INSERT INTO "LINES" VALUES(5826,6,2,1);
+INSERT INTO "LINES" VALUES(5827,6,3,1);
+INSERT INTO "LINES" VALUES(5828,6,4,1);
+INSERT INTO "LINES" VALUES(5829,6,5,1);
+INSERT INTO "LINES" VALUES(5830,6,6,1);
+INSERT INTO "LINES" VALUES(5831,6,7,1);
+INSERT INTO "LINES" VALUES(5832,6,8,1);
+INSERT INTO "LINES" VALUES(5833,6,9,1);
+INSERT INTO "LINES" VALUES(5834,6,10,1);
+INSERT INTO "LINES" VALUES(5835,6,11,1);
+INSERT INTO "LINES" VALUES(5836,6,12,1);
+INSERT INTO "LINES" VALUES(5837,6,13,1);
+INSERT INTO "LINES" VALUES(5838,6,14,1);
+INSERT INTO "LINES" VALUES(5839,6,15,1);
+INSERT INTO "LINES" VALUES(5840,6,16,1);
+INSERT INTO "LINES" VALUES(5841,6,17,1);
+INSERT INTO "LINES" VALUES(5842,6,18,1);
+INSERT INTO "LINES" VALUES(5843,6,19,1);
+INSERT INTO "LINES" VALUES(5844,6,20,1);
+INSERT INTO "LINES" VALUES(5845,6,21,1);
+INSERT INTO "LINES" VALUES(5846,6,22,1);
+INSERT INTO "LINES" VALUES(5847,6,23,1);
+INSERT INTO "LINES" VALUES(5848,6,24,1);
+INSERT INTO "LINES" VALUES(5849,6,25,1);
+INSERT INTO "LINES" VALUES(5850,6,26,1);
+INSERT INTO "LINES" VALUES(5851,6,27,1);
+INSERT INTO "LINES" VALUES(5852,6,28,1);
+INSERT INTO "LINES" VALUES(5853,6,29,1);
+INSERT INTO "LINES" VALUES(5854,6,30,1);
+INSERT INTO "LINES" VALUES(5855,6,31,1);
+INSERT INTO "LINES" VALUES(5856,6,32,1);
+INSERT INTO "LINES" VALUES(5857,6,33,1);
+INSERT INTO "LINES" VALUES(5858,6,34,1);
+INSERT INTO "LINES" VALUES(5859,6,35,1);
+INSERT INTO "LINES" VALUES(5860,6,36,1);
+INSERT INTO "LINES" VALUES(5861,6,37,1);
+INSERT INTO "LINES" VALUES(5862,6,38,1);
+INSERT INTO "LINES" VALUES(5863,6,39,1);
+INSERT INTO "LINES" VALUES(5864,6,40,1);
+INSERT INTO "LINES" VALUES(5865,6,41,1);
+INSERT INTO "LINES" VALUES(5866,6,42,1);
+INSERT INTO "LINES" VALUES(5867,6,43,1);
+INSERT INTO "LINES" VALUES(5868,6,44,1);
+INSERT INTO "LINES" VALUES(5869,6,45,1);
+CREATE TABLE `LINES_REPLACEMENTS` (`line_id`  INTEGER NOT NULL,`replacement_id`  INTEGER NOT NULL,PRIMARY KEY(line_id, replacement_id), FOREIGN KEY(`line_id`) REFERENCES LINES(id), FOREIGN KEY(`replacement_id`) REFERENCES REPLACEMENTS(id) );
+CREATE TABLE `RELATIONS` (`file_id`  INTEGER NOT NULL,`dep_id`   INTEGER NOT NULL,`dependency_timestamp` DATETIME NOT NULL,PRIMARY KEY(file_id, dep_id), FOREIGN KEY(`file_id`) REFERENCES FILES(id), FOREIGN KEY(`dep_id`) REFERENCES FILES(id) );
+INSERT INTO "RELATIONS" VALUES(7,8,1427812117);
+INSERT INTO "RELATIONS" VALUES(7,9,1427812159);
+INSERT INTO "RELATIONS" VALUES(7,12,1427220376);
+INSERT INTO "RELATIONS" VALUES(7,13,1427397043);
+INSERT INTO "RELATIONS" VALUES(10,9,1427812159);
+INSERT INTO "RELATIONS" VALUES(10,11,1427218446);
+INSERT INTO "RELATIONS" VALUES(10,12,1427220376);
+INSERT INTO "RELATIONS" VALUES(10,14,1427214610);
+INSERT INTO "RELATIONS" VALUES(17,9,1427812159);
+INSERT INTO "RELATIONS" VALUES(17,18,1427812140);
+INSERT INTO "RELATIONS" VALUES(17,12,1427220376);
+INSERT INTO "RELATIONS" VALUES(17,19,1427212284);
+CREATE TABLE `REPLACEMENTS` (`id`  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,`file_id`   INTEGER NOT NULL,`start_line` INTEGER NOT NULL,`lines_replaced` INTEGER NOT NULL,`lines_in_replacement` INTEGER NOT NULL,`comes_from_start_line` INTEGER NOT NULL,`comes_from_end_line` INTEGER NOT NULL,`comes_from_file_id` INTEGER NOT NULL,`transformation_id` INTEGER NOT NULL,`unhandled` INTEGER DEFAULT(1),`replacement_text` TEXT NOT NULL,FOREIGN KEY(`file_id`) REFERENCES FILES(id), FOREIGN KEY(`comes_from_file_id`) REFERENCES FILES(id), FOREIGN KEY(`transformation_id`) REFERENCES TRANSFORMATIONS(id) );
+INSERT INTO "REPLACEMENTS" VALUES(1,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(2,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(3,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(4,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(5,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(6,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(7,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(8,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(9,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(10,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(11,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(12,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(13,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(14,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(15,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(16,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(17,15,26,0,5,26,26,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(18,15,29,0,3,29,29,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(19,15,30,0,0,30,30,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(20,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(21,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(22,16,1,0,45,1,1,16,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(23,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(24,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(25,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(26,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(27,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(28,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(29,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(30,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(31,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(32,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(33,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(34,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(35,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(36,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(37,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(38,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(39,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(40,15,24,0,0,24,24,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(41,15,28,0,5,28,28,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(42,15,31,0,3,31,31,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(43,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(44,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(45,16,1,0,45,1,1,16,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(46,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(47,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(48,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(49,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(50,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(51,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(52,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(53,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(54,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(55,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(56,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(57,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(58,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(59,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(60,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(61,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(62,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(63,15,24,0,0,24,24,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(64,15,28,0,5,28,28,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(65,15,31,0,3,31,31,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(66,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(67,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(68,16,1,0,45,1,1,16,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(69,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(70,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(71,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(72,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(73,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(74,15,24,0,0,24,24,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(75,15,28,0,5,28,28,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(76,15,31,0,3,31,31,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(77,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(78,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(79,16,1,0,45,1,1,16,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(80,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(81,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(82,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(83,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(84,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(85,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(86,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(87,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(88,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(89,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(90,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(91,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(92,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(93,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(94,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(95,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(96,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(97,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(98,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(99,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(100,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(101,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(102,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(103,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(104,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(105,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(106,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(107,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(108,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(109,15,24,0,0,24,24,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(110,15,28,0,5,28,28,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(111,15,31,0,3,31,31,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(112,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(113,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(114,16,1,0,45,1,1,16,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(115,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(116,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(117,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(118,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(119,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(120,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(121,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(122,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(123,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(124,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(125,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(126,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(127,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(128,3,16,0,0,16,16,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(129,3,19,0,0,19,19,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(130,3,20,0,0,20,20,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(131,3,21,0,0,21,21,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(132,15,24,0,0,24,24,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(133,15,28,0,5,28,28,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(134,15,31,0,3,31,31,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(135,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(136,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(137,16,1,0,45,1,1,16,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(138,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(139,3,17,0,0,17,17,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(140,3,20,0,0,20,20,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(141,3,21,0,0,21,21,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(142,3,22,0,0,22,22,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(143,1,23,0,5,23,23,1,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(144,1,26,0,3,26,26,1,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(145,1,27,0,0,27,27,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(146,1,28,0,0,28,28,1,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(147,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(148,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(149,2,1,0,45,1,1,2,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(150,1,1,0,45,1,1,1,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(151,3,17,0,0,17,17,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(152,3,20,0,0,20,20,3,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(153,3,21,0,0,21,21,3,1,0,'char ');
+INSERT INTO "REPLACEMENTS" VALUES(154,3,22,0,0,22,22,3,1,0,'unsigned int ');
+INSERT INTO "REPLACEMENTS" VALUES(155,15,24,0,0,24,24,15,1,0,'int ');
+INSERT INTO "REPLACEMENTS" VALUES(156,15,28,0,5,28,28,15,1,0,'{
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __begin = (myVec).begin();
+std::_Vector_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > __end = (myVec).end();
+for(;__begin != __end; ++ __begin) {
+std::basic_string<char, std::char_traits<char>, std::allocator<char> > s = *__begin;
+');
+INSERT INTO "REPLACEMENTS" VALUES(157,15,31,0,3,31,31,15,1,0,'
+}
+}
+');
+INSERT INTO "REPLACEMENTS" VALUES(158,6,1,0,45,1,1,6,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(159,3,1,0,45,1,1,3,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(160,16,1,0,45,1,1,16,9,1,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+INSERT INTO "REPLACEMENTS" VALUES(161,15,1,0,45,1,1,15,9,0,'
+/*1000000001*/
+
+/*BACKPORT MOVE TOOLS BEGIN*/
+
+#ifndef BACKPORT_MOVE_TOOLS_DEFINED
+
+#define BACKPORT_MOVE_TOOLS_DEFINED
+namespace backport {
+
+template<class T> class rv {
+
+private:
+
+T _placeholder;
+
+rv();
+
+~rv();
+
+rv(rv const&);
+
+void operator=(rv const&);
+
+};
+
+template<class T>
+
+rv<T>& move(T const &x)
+
+{ return *reinterpret_cast<rv<T> *>(reinterpret_cast<T*>(&const_cast<char &>(reinterpret_cast<const volatile char &>(static_cast<T const &>(x))))); }
+
+template<class T>
+
+rv<T>& move(rv<T> &x)
+
+{ return x; }
+
+}
+
+#endif // not defined BACKPORT_MOVE_TOOLS_DEFINED
+
+
+
+/*BACKPORT MOVE TOOLS END*/
+');
+CREATE TABLE `TRANSFORMATIONS` (`id`  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,`name` TEXT NOT NULL);
+INSERT INTO "TRANSFORMATIONS" VALUES(1,'MultipleTransforms');
+INSERT INTO "TRANSFORMATIONS" VALUES(9,'ReplaceRvalueRef');
+DELETE FROM "sqlite_sequence";
+INSERT INTO "sqlite_sequence" VALUES('FILES',19);
+INSERT INTO "sqlite_sequence" VALUES('LINES',5869);
+INSERT INTO "sqlite_sequence" VALUES('TRANSFORMATIONS',161);
+INSERT INTO "sqlite_sequence" VALUES('REPLACEMENTS',161);
+CREATE UNIQUE INDEX FILES_INDEX ON FILES (path);
+CREATE UNIQUE INDEX FILES_INDEX_ID ON FILES (id);
+CREATE UNIQUE INDEX COMP_UNIT_INDEX ON COMPILATION_UNIT (id);
+CREATE INDEX RELATIONS_INDEX ON RELATIONS (file_id, dep_id);
+CREATE UNIQUE INDEX TRANSFORMATIONS_INDEX_NAME ON TRANSFORMATIONS (name);
+CREATE UNIQUE INDEX TRANSFORMATIONS_INDEX_ID ON TRANSFORMATIONS (id);
+CREATE UNIQUE INDEX REPLACEMENT_INDEX_4 ON REPLACEMENTS (id, file_id, start_line, lines_replaced, replacement_text);
+CREATE UNIQUE INDEX REPLACEMENT_INDEX_1 ON REPLACEMENTS (id);
+CREATE INDEX REPLACEMENT_INDEX_3 ON REPLACEMENTS (transformation_id);
+CREATE INDEX REPLACEMENT_INDEX_2 ON REPLACEMENTS (file_id);
+CREATE UNIQUE INDEX LINES_INDEX_FILE_ID_LINE ON LINES (file_id, line);
+CREATE UNIQUE INDEX LINES_INDEX_ID ON LINES (id);
+CREATE UNIQUE INDEX LINES_REPLACEMENTS_INDEX_LINE_ID_REPLACEMENT_ID ON LINES_REPLACEMENTS (line_id, replacement_id);
+CREATE INDEX LINES_REPLACEMENTS_INDEX_REPLACEMENT_ID ON LINES_REPLACEMENTS (replacement_id);
+CREATE INDEX LINES_REPLACEMENTS_INDEX_ID ON LINES_REPLACEMENTS (line_id);
+COMMIT;

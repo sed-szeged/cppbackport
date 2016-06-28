@@ -1,0 +1,12 @@
+[
+{
+  "directory": "{workDir}", 
+  "command": "cl.exe -c {workDir}/A.cpp -o2",
+  "file": "{workDir}/A.cpp"
+},
+{
+  "directory": "{workDir}", 
+  "command": "cl.exe -c {workDir}/B.cpp -o2",
+  "file": "{workDir}/B.cpp"
+}
+]

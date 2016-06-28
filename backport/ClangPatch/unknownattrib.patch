@@ -1,0 +1,99 @@
+Index: include/clang/AST/Attr.h
+===================================================================
+--- include/clang/AST/Attr.h	(revision 242392)
++++ include/clang/AST/Attr.h	(working copy)
+@@ -147,6 +147,34 @@
+   }
+ };
+ 
++class UnknownAttr : public Attr {
++
++public:
++    static UnknownAttr *CreateImplicit(ASTContext &Ctx, SourceRange Loc = SourceRange()) {
++        UnknownAttr *A = new (Ctx)UnknownAttr(Loc, Ctx, 0, "");
++        A->setImplicit(true);
++        return A;
++    }
++
++    UnknownAttr(SourceRange R, ASTContext &Ctx
++        , unsigned SI, StringRef name
++        )
++        : Attr(attr::Unused, R, SI), name(name)
++    {
++    }
++
++    UnknownAttr *clone(ASTContext &C) const override;
++    void printPretty(raw_ostream &OS,
++        const PrintingPolicy &Policy) const override;
++    const char *getSpelling() const override;
++
++
++    static bool classof(const Attr *A) { return A->getKind() == attr::Unused; }
++    bool isLateParsed() const override { return 0; }
++protected:
++    StringRef name;
++};
++
+ #include "clang/AST/Attrs.inc"
+ 
+ inline const DiagnosticBuilder &operator<<(const DiagnosticBuilder &DB,
+Index: lib/AST/AttrImpl.cpp
+===================================================================
+--- lib/AST/AttrImpl.cpp	(revision 242392)
++++ lib/AST/AttrImpl.cpp	(working copy)
+@@ -24,4 +24,40 @@
+ 
+ void InheritableParamAttr::anchor() { }
+ 
++UnknownAttr *UnknownAttr::clone(ASTContext &C) const {
++    auto *A = new (C)UnknownAttr(getLocation(), C, getSpellingListIndex(), name);
++    A->Inherited = Inherited;
++    A->IsPackExpansion = IsPackExpansion;
++    A->Implicit = Implicit;
++    return A;
++}
++
++void UnknownAttr::printPretty(raw_ostream &OS, const PrintingPolicy &Policy) const {
++    switch (SpellingListIndex) {
++    default:
++        llvm_unreachable("Unknown attribute spelling!");
++        break;
++    case 0: {
++                OS << " __attribute__((" << name << "))";
++                break;
++    }
++    case 1: {
++                OS << " [[" << name << "]]";
++                break;
++    }
++    }
++}
++
++const char *UnknownAttr::getSpelling() const {
++    switch (SpellingListIndex) {
++    default:
++        llvm_unreachable("Unknown attribute spelling!");
++        return "(No spelling)";
++    case 0:
++        return name.str().c_str();
++    case 1:
++        return name.str().c_str();
++    }
++}
++
+ #include "clang/AST/AttrImpl.inc"
+Index: lib/Sema/SemaDeclAttr.cpp
+===================================================================
+--- lib/Sema/SemaDeclAttr.cpp	(revision 242392)
++++ lib/Sema/SemaDeclAttr.cpp	(working copy)
+@@ -4296,6 +4296,10 @@
+                               ? diag::warn_unhandled_ms_attribute_ignored
+                               : diag::warn_unknown_attribute_ignored)
+         << Attr.getName();
++    if (Attr.getKind() == AttributeList::UnknownAttribute) {
++        D->addAttr(::new (S.Context) UnknownAttr(Attr.getRange(), S.Context,
++            1, Attr.getName()->getName()));
++    }
+     return;
+   }
+ 

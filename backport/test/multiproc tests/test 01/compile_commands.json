@@ -1,0 +1,62 @@
+[
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample2.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample2.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample3.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample3.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample5.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample6.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample7.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample8.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample9.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample10.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample11.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+},
+{
+  "directory": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01", 
+  "command": "cl.exe -fms-extensions -fms-compatibility -nobuiltininc -fms-compatibility -fms-extensions -Wno-invalid-token-paste -D_Complex=__Complex -D_Bool=__Bool \"C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample12.cpp\" -w",
+  "file": "C:/llvm/tools/clang/tools/extra/backport/test/multiproc tests/test 01/sample4.cpp"
+}
+]

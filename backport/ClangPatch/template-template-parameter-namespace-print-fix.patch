@@ -1,0 +1,15 @@
+Index: lib/AST/TemplateBase.cpp
+===================================================================
+--- lib/AST/TemplateBase.cpp	(revision 242392)
++++ lib/AST/TemplateBase.cpp	(working copy)
+@@ -384,6 +384,10 @@
+     break;
+ 
+   case Template:
++      if (getAsTemplate().getKind() == TemplateName::NameKind::Template) {
++          getAsTemplate().getAsTemplateDecl()->printQualifiedName(Out, Policy);
++          break;
++      }
+     getAsTemplate().print(Out, Policy);
+     break;
+ 

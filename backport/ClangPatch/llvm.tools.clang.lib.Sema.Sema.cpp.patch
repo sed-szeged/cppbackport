@@ -1,0 +1,27 @@
+Index: Sema.cpp
+===================================================================
+--- Sema.cpp	(revision 230753)
++++ Sema.cpp	(working copy)
+@@ -677,6 +677,22 @@
+     CheckDelayedMemberExceptionSpecs();
+   }
+ 
++  // Force the parsing of ALL templates
++  // The OpaqueParser should always be available at this point
++  if (OpaqueParser != nullptr) {
++      for (auto& LPT : LateParsedTemplateMap) {
++          // Unless something goes horribly wrong, the LateParsedTemplateMap should be valid
++          if (LPT.second != nullptr) {
++              auto decl = LPT.second->D;
++              // The contained decls should all be function templates
++              if ((decl != nullptr) && (decl->isFunctionOrFunctionTemplate()) && (decl->getAsFunction() != nullptr)) {
++                  LateTemplateParser(OpaqueParser, *(LPT.second));
++              }
++          }
++      }
++  }
++  // End of Magic
++
+   // All delayed member exception specs should be checked or we end up accepting
+   // incompatible declarations.
+   assert(DelayedDefaultedMemberExceptionSpecs.empty());
