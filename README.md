@@ -61,6 +61,7 @@ There are two different ways for transformation:
 
         cd extra
         git clone https://github.com/sed-szeged/cppbackport.git
+        cp -R cppbackport/backport backport
         
 5. Edit CMakeLists.txt in extra directory.
 
