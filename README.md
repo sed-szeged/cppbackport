@@ -81,7 +81,10 @@ There are two different ways for transformation:
 
 7. Create build directory and run cmake.
 
-        cmake <..>/llvm -DCMAKE_BUILD_TYPE=Release
+        cd ../../..  # To the parent dir of llvm/
+        mkdir build
+        cd build
+        cmake ../llvm -DCMAKE_BUILD_TYPE=Release
         make
 
     
